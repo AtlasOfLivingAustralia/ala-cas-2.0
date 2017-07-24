@@ -1,6 +1,11 @@
 /* Branding
 ================================= */
-
+.logo-navbar-brand {
+    background-image: url(https://www.ala.org.au/commonui-bs3-v2/commonui-bs3/img/ala-logo-2016-inline.png);
+    width: 280px;
+    height: 42px;
+    background-repeat: no-repeat;
+}
 .logo-brand {
   text-align: center;
   margin-top: 1em;
@@ -8,6 +13,13 @@
 .brand-layout-control {
   display: inline-block;
   font-size: 64px;
+  text-align: -webkit-center;
+}
+.brand-layout-logo {
+    background-image: url("../img/supporting-graphic-element-flat-medium.png");
+    width: 80px;
+    height: 70px;
+    background-repeat: no-repeat;
 }
 .heading-medium-large {
   border-bottom: inherit;
@@ -22,5 +34,5 @@
 .btn-facebook{background-color: #507CBE;color: white;} .btn-facebook:hover{background-color:#4B73AE;color: white;}
 .btn-twitter{background-color: #55acee;color: white;} .btn-twitter:hover{background-color:#5CBBDC;color: white;}
 .btn-google{background-color: #dd4b39;color: white;} .btn-google:hover{background-color:#CE4636;color: white;}
-.forgot {position:absolute;top:468px;right:41px;font-size:16px;}
+.forgot {position:absolute;top:468px;right:41px;font-size:16px;    z-index: 10;}
 .checkbox-rememberMe label {font-size:14px;color:#637073;}

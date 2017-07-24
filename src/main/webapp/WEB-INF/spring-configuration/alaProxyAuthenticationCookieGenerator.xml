@@ -6,11 +6,11 @@
 	<description>
 	This Spring Configuration file describes the cookie used to indicate to ALA web applications that a user is authenticated.
 	</description>
-	
+
 	<bean id="alaProxyAuthenticationCookieGenerator" class="org.jasig.cas.web.support.CookieRetrievingCookieGenerator"
 		p:cookieSecure="false"
 		p:cookieMaxAge="-1"
 		p:cookieName="ALA-Auth"
-		p:cookieDomain=".ala.org.au"
+          p:cookieDomain="${CAS_cookie_domain}"
 		p:cookiePath="/" />
 </beans>

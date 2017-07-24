@@ -17,8 +17,10 @@ TODO: add ALA licensing info.
 
 <c:if test="${not pageContext.request.secure}">
     <div id="msg" class="errors">
-	<h2>Non-secure Connection</h2>
-	<p>You are currently accessing CAS over a non-secure connection.  Single Sign On WILL NOT WORK.  In order to have single sign on work, you MUST log in over HTTPS.</p>
+        <span class="ssoError">
+            <h2>Non-secure Connection</h2>
+            <p>You are currently accessing CAS over a non-secure connection.  Single Sign On WILL NOT WORK.  In order to have single sign on work, you MUST log in over HTTPS.</p>
+        </span>
     </div>
 </c:if>
 
@@ -34,7 +36,7 @@ TODO: add ALA licensing info.
 
 		    <div class="logo-brand">
 			<div class="brand-layout-control">
-			    <img alt="Brand" class="img-responsive" src="img/supporting-graphic-element-flat-medium.png" />
+                <div class="brand-layout-logo"/>
 			</div>
 			<h2 class="heading-medium-large">Sign in to the ALA</h2>
 		    </div>
