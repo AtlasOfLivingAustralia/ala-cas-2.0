@@ -32,6 +32,7 @@
     <!-- ALA -->
     <link href="<c:url value="/css/ala-styles.css" />" rel="stylesheet" />
     <link href="<c:url value="/css/ala-cas.css" />" rel="stylesheet" />
+    <link href="<c:url value="/css/doedat-cas.css" />" rel="stylesheet" />
 
     <!-- favicon -->
     <link rel="shortcut icon" href="<c:url value="/img/favicon/favicon.ico" />" type="image/x-icon">
@@ -74,7 +75,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="https://www.ala.org.au/">
-                <img alt="Brand" src="https://www.ala.org.au/commonui-bs3-v2/commonui-bs3/img/ala-logo-2016-inline.png">
+                <div class="logo-navbar-brand">
+                </div>
             </a>
         </div>
 

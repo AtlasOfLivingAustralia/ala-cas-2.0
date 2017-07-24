@@ -1,0 +1,29 @@
+form.banner,
+#bs-example-navbar-collapse-1 > .navbar-nav,
+.btn-twitter,
+.footer-container,
+.ssoError {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+}
+
+
+.logo-navbar-brand {
+    background-image: url(http://demo.botanicalcollections.be/images/herbariums/plantentuin-meise.gif);
+    width: 280px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.brand-layout-logo {
+    background-image: url(http://demo.botanicalcollections.be/images/herbariums/plantentuin-meise.gif);
+    width: 120px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
