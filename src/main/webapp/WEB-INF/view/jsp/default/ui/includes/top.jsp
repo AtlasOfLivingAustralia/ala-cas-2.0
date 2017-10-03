@@ -9,11 +9,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="ala" uri="/tld/ala.tld" %>
+<!--@ taglib prefix="ala" uri="/tld/ala.tld" %>-->
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<html lang="en">
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}" />
+<fmt:setBundle basename="au.org.ala.cas.i18n.messages" />
 <fmt:setBundle basename="ala-cas-build" var="ala_cas_build" />
+
+<html lang="${language}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8" />
@@ -21,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="app.version" content="<fmt:message key="ala.cas.build.version" bundle="${ala_cas_build}"/>" />
 
-    <title>Atlas of Living Australia | Login</title>
+    <title><fmt:message key="top.title" /></title>
 
     <!-- Bootstrap -->
     <link href="<c:url value="/css/bootstrap.min.css" />" rel="stylesheet" />
@@ -69,12 +72,12 @@
     <div class="container container-navbar">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"><fmt:message key="header.toggle_navigation" /></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.ala.org.au/">
+            <a class="navbar-brand" href="<fmt:message key="header.main_website" />">
                 <div class="logo-navbar-brand">
                 </div>
             </a>
@@ -90,26 +93,38 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-2 hidden-xs">
+                <div class="col-md-2 hidden-xs" style="width: initial;float: right;">
                     <ul class="nav navbar-nav navbar-right nav-logged-in">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                My profile
+                                <fmt:message key="login.dropdown.my_profile" />
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/userdetails/myprofile">View profile</a></li>
-                                <%--<li><a href="/userdetails/registration/editAccount">Account settings</a></li>--%>
+                                <li><a href="/userdetails/myprofile?lang=${language}"><fmt:message key="login.dropdown.view_profile" /></a></li>
                                 <li class="divider"></li>
-                                <li><a href="/cas/login">Login</a></li>
-                                <li><a href="/cas/logout">Logout</a></li>
-                                <li><a href="/userdetails/registration/createAccount">Register</a></li>
+                                <li><a href="/login?language=${language}"><fmt:message key="login.dropdown.login" /></a></li>
+                                <li><a href="/logout?language=${language}"><fmt:message key="login.dropdown.logout" /></a></li>
+                                <li><a href="/userdetails/registration/createAccount?lang=${language}"><fmt:message key="login.dropdown.register" /></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-language">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="language">${language.toString().substring(0,2)}</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" style="min-width: initial;">
+                                <li><a href="?language=en"><fmt:message key="login.dropdown.language.en" /></a></li>
+                                <li><a href="?language=nl"><fmt:message key="login.dropdown.language.nl" /></a></li>
+                                <li><a href="?language=fr"><fmt:message key="login.dropdown.language.fr" /></a></li>
+                                <li><a href="?language=de"><fmt:message key="login.dropdown.language.de" /></a></li>
                             </ul>
                         </li>
                     </ul>
 
                 </div>
             </div><!-- End row -->
+
 
             <ul class="nav navbar-nav">
                 <!-- <li class="active"><a href="#">Home</a></li> -->
@@ -175,14 +190,18 @@
                     </ul>
                 </li>
             </ul>
+            <!-- Mobile menu -->
             <ul class="nav navbar-nav navbar-right visible-xs">
-                <li><a href="https://auth.ala.org.au/userdetails/myprofile/"><span class="nav-login">View profile</span></a></li>
-                <li><a href="https://auth.ala.org.au/userdetails/registration/editAccount"><span class="nav-login">Account settings</span></a></li>
-                <li>::loginLogoutListItem::</li>
+                <li><a href="/userdetails/myprofile/?lang=${language}"><span ><fmt:message key="login.view_profile" /></span></a></li>
+                <li><a href="/userdetails/registration/editAccount?lang=${language}"><span ><fmt:message key="login.account_settings" /></span></a></li>
+                <li><a href="/login"><fmt:message key="login.dropdown.login" /></a></li>
+                <li><a href="/logout"><fmt:message key="login.dropdown.logout" /></a></li>
+                <li><a href="/userdetails/registration/createAccount?lang=${language}"><fmt:message key="login.dropdown.register" /></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<!-- End Navbar -->
+<!-- End Navbar
 
 <div id="content">
+-->

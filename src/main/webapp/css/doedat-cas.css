@@ -14,14 +14,14 @@ form.banner,
 
 
 .logo-navbar-brand {
-    background-image: url(http://demo.botanicalcollections.be/images/herbariums/plantentuin-meise.gif);
+    background-image: url(../img/plantentuin-meise.gif);
     width: 280px;
     height: 40px;
     background-repeat: no-repeat;
     background-size: contain;
 }
 .brand-layout-logo {
-    background-image: url(http://demo.botanicalcollections.be/images/herbariums/plantentuin-meise.gif);
+    background-image: url(../img/plantentuin-meise.gif);
     width: 120px;
     height: 70px;
     background-repeat: no-repeat;

@@ -1,14 +1,15 @@
 <%--
 TODO: add ALA licensing info. 
 --%>
+
 <jsp:directive.include file="includes/top.jsp" />
 <section id="breadcrumb">
 	<div class="container">
 		<div class="row">
 			<nav aria-label="Breadcrumb" role="navigation">
 				<ol class="breadcrumb-list">
-					<li><a href="https://www.ala.org.au/">Home</a></li>
-					<li class="active">Authentication</li>
+					<li><a href="<fmt:message key="header.main_website" />"><fmt:message key="casLoginView.home" /></a></li>
+					<li class="active"><fmt:message key="casLoginView.authentication" /></li>
 				</ol>
 			</nav>
 		</div>
@@ -29,7 +30,7 @@ TODO: add ALA licensing info.
 
     <!-- Main col -->
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-	<h1 class="hidden">Welcome the Atlas of Living Australia</h1>
+	<h1 class="hidden"><fmt:message key="casLoginView.welcome" /></h1>
 
 	<div class="panel panel-default">
 	    <div class="panel-body">
@@ -38,14 +39,14 @@ TODO: add ALA licensing info.
 			<div class="brand-layout-control">
                 <div class="brand-layout-logo"/>
 			</div>
-			<h2 class="heading-medium-large">Sign in to the ALA</h2>
+			<h2 class="heading-medium-large"><fmt:message key="casLoginView.sign_in_to_application" /></h2>
 		    </div>
 
-		    <a href="${FacebookClientUrl}" class="btn btn-lg btn-facebook btn-block margin-bottom-1 font-xxsmall">Sign in with Facebook</a>
-		    <a href="${TwitterClientUrl}"  class="btn btn-lg btn-twitter btn-block margin-bottom-1 font-xxsmall">Sign in with Twitter</a>
-		    <a href="${Google2ClientUrl}"  class="btn btn-lg btn-google btn-block margin-bottom-1 font-xxsmall">Sign in with Google</a>
+		    <a href="${FacebookClientUrl}" class="btn btn-lg btn-facebook btn-block margin-bottom-1 font-xxsmall"><fmt:message key="casLoginView.sign_in_facebook" /></a>
+		    <a href="${TwitterClientUrl}"  class="btn btn-lg btn-twitter btn-block margin-bottom-1 font-xxsmall"><fmt:message key="casLoginView.sign_in_twitter" /></a>
+		    <a href="${Google2ClientUrl}"  class="btn btn-lg btn-google btn-block margin-bottom-1 font-xxsmall"><fmt:message key="casLoginView.sign_in_google" /></a>
 
-		    <p class="separator t-center margin-bottom-2"><span>Or</span></p>
+		    <p class="separator t-center margin-bottom-2"><span><fmt:message key="casLoginView.or" /></span></p>
 
 		    <form:form class="form-signin" method="post" id="fm1" commandName="${commandName}" htmlEscape="true">
 				<fieldset>
@@ -97,7 +98,7 @@ TODO: add ALA licensing info.
 					   placeholder="password"
 					   tabindex="2" />
 
-			    <a class="forgot" title="Password Reset" href="/userdetails/registration/forgottenPassword" target="_blank">Forgot?</a>
+			    <a class="forgot" title="Password Reset" href="/userdetails/registration/forgottenPassword?lang=${language}" target="_blank"><fmt:message key="casLoginView.forgot_password" /></a>
 			</div>
 
 			<!-- Alert Information -->
@@ -107,7 +108,7 @@ TODO: add ALA licensing info.
 
 			<div class="checkbox checkbox-rememberMe margin-bottom-2">
 			    <label>
-					<input type="checkbox" id="rememberMe" name="rememberMe" value="true" tabindex="3" /> Remember me
+					<input type="checkbox" id="rememberMe" name="rememberMe" value="true" tabindex="3" /> <fmt:message key="casLoginView.remember_me" />
 			    </label>
 			</div>
 			</fieldset>
@@ -123,7 +124,7 @@ TODO: add ALA licensing info.
 			<!-- NOTE: you can leave the link "/userdetails/registration/createAccount" UNLESS you are changing the the userdetails
 			     servlet mapping or deploying userdetails on a diff host.
 			-->
-			<p class="small text-center">Don't have an account? <a href="/userdetails/registration/createAccount">Sign up now</a>.</p>
+			<p class="small text-center"><fmt:message key="casLoginView.dont_have_an_account" /> <a href="/userdetails/registration/createAccount?lang=${language}"><fmt:message key="casLoginView.sign_up_now" /></a>.</p>
 
 		    </form:form>
 

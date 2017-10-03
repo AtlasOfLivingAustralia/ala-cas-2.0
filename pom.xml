@@ -41,7 +41,7 @@
 		</plugins>
 		<finalName>cas</finalName>
 
-		<!-- NOTE: this is to set the top.jsp's: <meta name="app.version" content="${version}"/> 
+		<!-- NOTE: this is to set the top.jsp's: <meta name="app.version" contencasLoginViewt="${version}"/>
 			to this war's version (for example: 2.0.2, or 2.0.3-SNAPSHOT), it work as 
 			follows: 1. mvn resources:resources extracts the version number from this 
 			pom.xml and stores the value in ./target/classes/ala-cas-build.properties 
@@ -52,14 +52,20 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<includes>
-					<include>**/ala-cas-build.properties</include>
+					<include>**/**</include>
 				</includes>
 			</resource>
 		</resources>
 	</build>
 
 	<dependencies>
-		<dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
 			<groupId>au.org.ala</groupId>
 			<artifactId>ala-header-and-tails</artifactId>
 			<version>2.4-SNAPSHOT</version>

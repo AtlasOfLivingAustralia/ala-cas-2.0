@@ -91,6 +91,7 @@
     
 	<view-state id="viewLoginForm" view="casLoginView" model="credential">
         <binder>
+            <binding property="centralServer" />
             <binding property="username" />
             <binding property="password" />
 	    <binding property="rememberMe" />

@@ -27,6 +27,17 @@ body.background-lightgrey {background-color:#f2f2f2;}
 /* allow for WordPress admin bar */
 .admin-bar .navbar { top: 46px; }
 
+.navbar-nav .dropdown-language, .navbar-nav .dropdown-language > a:hover, .navbar-nav .dropdown-language a:focus {
+    background-color: transparent !important;
+}
+.navbar-nav .dropdown-language > a  {
+    color: black !important;
+}
+.language{
+    text-transform: uppercase;
+}
+
+
 /* Nav Login
 ================================= */
 .nav-login, .nav-logged-in {font-weight: 700;min-width: 80px;}
@@ -34,7 +45,7 @@ body.background-lightgrey {background-color:#f2f2f2;}
 div.col-md-1>ul.nav-login>li>a {color: #fff;margin-top: 22px;}
 div.col-md-1>ul.nav-login>li>a:hover {color: #fff;text-decoration: underline;}
 div.col-md-1>ul.nav-login>li>a:visited {color: #fff;}
-.nav-logged-in>li {background-color: #d5502a;height: 76px;margin-top: -30px;border-radius: 0 0 6px 6px;margin-bottom: -10px;}
+.nav-logged-in>li {background-color: #d5502a;height: 76px;margin-top: -30px;border-radius: 0 0 6px 6px;margin-bottom: -10px;margin-left: 5px;}
 #bs-example-navbar-collapse-1 > div > div.col-md-2.hidden-xs > ul > li > a {color: #fff;margin-top: 22px;}
 #bs-example-navbar-collapse-1 > div > div.col-md-2.hidden-xs > ul > li > a:hover {background-color: #D5502A; color: #fff;text-decoration: underline;}
 #bs-example-navbar-collapse-1 > div > div.col-md-2.hidden-xs > ul > li > a:visited,#bs-example-navbar-collapse-1 > div > div.col-md-2.hidden-xs > ul > li > a:active,#bs-example-navbar-collapse-1 > div > div.col-md-2.hidden-xs > ul > li > a:focus {background-color: #D5502A;}
