@@ -39,7 +39,7 @@ TODO: add ALA licensing info.
 			<div class="brand-layout-control">
                 <div class="brand-layout-logo"/>
 			</div>
-			<h2 class="heading-medium-large"><fmt:message key="casLoginView.sign_in_to_application" /></h2>
+			<!--<h2 class="heading-medium-large"><fmt:message key="casLoginView.sign_in_to_application" /></h2>-->
 		    </div>
 
 		    <a href="${FacebookClientUrl}" class="btn btn-lg btn-facebook btn-block margin-bottom-1 font-xxsmall"><fmt:message key="casLoginView.sign_in_facebook" /></a>
@@ -49,7 +49,11 @@ TODO: add ALA licensing info.
 		    <p class="separator t-center margin-bottom-2"><span><fmt:message key="casLoginView.or" /></span></p>
 
 		    <form:form class="form-signin" method="post" id="fm1" commandName="${commandName}" htmlEscape="true">
-				<fieldset>
+                <fmt:message key="casLoginView.password" var="passwordText"/>
+                <fmt:message key="casLoginView.email_address" var="emailText" />
+
+
+                <fieldset>
 			<div class="form-group" id="ala-login-fields">
 			    <label for="username" class="sr-only">
 				<spring:message code="screen.welcome.label.netid" />
@@ -71,12 +75,13 @@ TODO: add ALA licensing info.
 						path="username"
 						autocomplete="off"
 						htmlEscape="true"
-						placeholder="email address" autofocus="autofocus" />
+						placeholder="${emailText}" autofocus="autofocus" />
 				</c:otherwise>
 				</c:choose>
 			</div>
 
-			<div class="form-group margin-bottom-2">
+
+			<div class="form-group margin-bottom-2" style="position: relative;">
 			    <label for="password" class="sr-only">
 				<spring:message code="screen.welcome.label.password" />
 			    </label>
@@ -95,10 +100,10 @@ TODO: add ALA licensing info.
 					   htmlEscape="true"
 					   autocomplete="off"
 					   size="25"
-					   placeholder="password"
+					   placeholder="${passwordText}"
 					   tabindex="2" />
 
-			    <a class="forgot" title="Password Reset" href="/userdetails/registration/forgottenPassword?lang=${language}" target="_blank"><fmt:message key="casLoginView.forgot_password" /></a>
+			    <a class="forgot" href="/userdetails/registration/forgottenPassword?lang=${language}" target="_blank"><fmt:message key="casLoginView.forgot_password" /></a>
 			</div>
 
 			<!-- Alert Information -->
@@ -118,7 +123,7 @@ TODO: add ALA licensing info.
 			<input type="hidden" name="_eventId"  value="submit" />
 
 			<button class="btn btn-lg btn-primary btn-block margin-bottom-1 font-xxsmall" accesskey="l" type="submit" tabindex="3">
-			    <spring:message code="screen.welcome.button.login" />
+			    <fmt:message key="login.dropdown.login" />
 			</button>
 
 			<!-- NOTE: you can leave the link "/userdetails/registration/createAccount" UNLESS you are changing the the userdetails

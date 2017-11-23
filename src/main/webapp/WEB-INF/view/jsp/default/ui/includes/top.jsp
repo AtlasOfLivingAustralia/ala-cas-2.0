@@ -3,8 +3,8 @@
 --%>
 <!DOCTYPE html>
 
-<%@ page pageEncoding="UTF-8" %>
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -12,12 +12,14 @@
 <!--@ taglib prefix="ala" uri="/tld/ala.tld" %>-->
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<!--fmt:requestEncoding value = "UTF-8" />-->
 <fmt:setLocale value="${language}" />
 <fmt:setBundle basename="au.org.ala.cas.i18n.messages" />
 <fmt:setBundle basename="ala-cas-build" var="ala_cas_build" />
 
 <html lang="${language}">
 <head>
+    <meta name="google" value="notranslate">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
