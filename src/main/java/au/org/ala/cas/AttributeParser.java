@@ -148,7 +148,7 @@ public class AttributeParser {
 		final Iterator iter = googleEmails.iterator();
 		while (iter.hasNext()) {
 		    final Google2Email ge = (Google2Email)iter.next();
-		    if (ge.getType().equals("account")) {
+		    if (ge.getType()!= null && ge.getType().toLowerCase().equals("account")) {
 			return ge.getEmail();
 		    }
 		}
