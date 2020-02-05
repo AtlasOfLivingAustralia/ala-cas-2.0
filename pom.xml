@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
-
+	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>au.org.ala</groupId>
 		<artifactId>ala-parent-pom</artifactId>
@@ -9,12 +9,14 @@
 		<!--<relativePath>../ala-parent-pom/pom.xml</relativePath>-->
 	</parent>
 
-	<modelVersion>4.0.0</modelVersion>
 	<groupId>au.org.ala</groupId>
 	<artifactId>ala-cas</artifactId>
 	<packaging>war</packaging>
 	<version>2.0.7-SNAPSHOT</version>
 
+	<modules>
+		<module>pac4j-oauth</module>
+	</modules>
 	<prerequisites>
 		<maven>3.0.5</maven>
 	</prerequisites>
@@ -57,7 +59,6 @@
 			</resource>
 		</resources>
 	</build>
-
 	<dependencies>
         <dependency>
             <groupId>jstl</groupId>
@@ -177,10 +178,15 @@
 			<version>${pac4j.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.pac4j</groupId>
+			<groupId>ala-cas</groupId>
 			<artifactId>pac4j-oauth</artifactId>
 			<version>${pac4j.version}</version>
 		</dependency>
+		<!--	<dependency>
+                <groupId>org.pac4j</groupId>
+                <artifactId>pac4j-oauth</artifactId>
+                <version>${pac4j.version}</version>
+            </dependency>-->
 	</dependencies>
 
 	<properties>
