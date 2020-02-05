@@ -139,25 +139,7 @@ public class AttributeParser {
 	} else if (profileType.equals("Google2Profile")) {
 	    final Google2Profile googleProfile = (Google2Profile)userProfile;
 	    if (alaName.equals("email")) {
-		// NOTE: in theory we could do here: return Google2Profile.getEmail() BUT that seems
-		//       to be grabbing and returning the first email from the list without checking
-		//       the email "type"; so just to be sure we do ENFORCE here returning the email
-		//       of type "account".
-		//
-		final List googleEmails = googleProfile.getEmails();
-		final Iterator iter = googleEmails.iterator();
-		while (iter.hasNext()) {
-		    final Google2Email ge = (Google2Email)iter.next();
-		    if (ge.getType()!= null && ge.getType().toLowerCase().equals("account")) {
-			return ge.getEmail();
-		    }
-		}
-
-		// Not sure if this can really happen; we should reach this point only after a successful authentication,
-		// and that should be possible ONLY with a valid "account" email.
-		logger.debug("error, can't find required Google2Profile email of type \"account\"!");
-		return null;
-
+			return googleProfile.getEmail();
 	    } else if (alaName.equals("firstname")) {
 		return googleProfile.getFirstName();
 

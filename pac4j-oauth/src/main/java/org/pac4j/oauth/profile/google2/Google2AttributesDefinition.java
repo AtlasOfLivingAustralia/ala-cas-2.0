@@ -27,12 +27,12 @@ import org.pac4j.oauth.profile.OAuthAttributesDefinition;
 public class Google2AttributesDefinition extends OAuthAttributesDefinition {
 
     public static final String GENDER = "gender";
-    public static final String DISPLAY_NAME = "displayName";
-    public static final String GIVEN_NAME = "name.givenName";
-    public static final String FAMILY_NAME = "name.familyName";
-    public static final String URL = "url";
-    public static final String PICTURE = "image.url";
-    public static final String LANGUAGE = "language";
+    public static final String DISPLAY_NAME = "name";
+    public static final String GIVEN_NAME = "given_name";
+    public static final String FAMILY_NAME = "family_name";
+    public static final String URL = "profile";
+    public static final String PICTURE = "picture";
+    public static final String LANGUAGE = "locale";
     public static final String EMAIL = "email";
 
     public Google2AttributesDefinition() {
