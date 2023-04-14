@@ -130,7 +130,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20140107</version>
+			<version>20230227</version>
 			<type>jar</type>
 		</dependency>
 		<!-- TODO: review the use of saml in source code and (most likely REMOVE 
